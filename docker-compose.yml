@@ -1,0 +1,18 @@
+version: '3'
+services:
+  apache:
+    image: harobed/php-ssmtp:7-apache
+    volumes:
+      - ./www/:/var/www/html/
+    ports:
+      - 80
+
+  postfix:
+    image: harobed/versatile-postfix:latest
+    command: exemple.com user:password
+    environment:
+      - DISABLE_DKIM=1
+
+networks:
+  default:
+    driver: bridge
