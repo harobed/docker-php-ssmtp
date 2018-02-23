@@ -4,7 +4,9 @@ This image add [ssmtp](https://wiki.archlinux.org/index.php/SSMTP) service to of
 [Docker Php7 Apache image](https://github.com/docker-library/php/blob/fd8e15250a0c7667b161c34a25f7916b01f72367/7.2/stretch/apache/Dockerfile).
 
 With *ssmtp** you can use buildin [mail](http://php.net/manual/en/function.mail.php) Php function
-to send mail via smtp server.
+to send mails via smtp server configured by `SSMTP_*` environment variables.
+
+This image enable also [Apache Rewrite mod](http://httpd.apache.org/docs/current/mod/mod_rewrite.html), *RewriteEngine* can be used in [.htaccess](www/.htaccess).
 
 `docker-compose.yml` example to connect `apache` service to `postfix`:
 

@@ -1,5 +1,8 @@
 FROM php:7-apache
 
+RUN a2enmod rewrite
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
 RUN curl -L https://github.com/hairyhenderson/gomplate/releases/download/v2.3.0/gomplate_linux-amd64-slim > /usr/local/bin/gomplate && \
   chmod u+x /usr/local/bin/gomplate
 
